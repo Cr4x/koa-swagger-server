@@ -1,0 +1,46 @@
+{
+  "name": "koa-swagger-server",
+  "version": "0.0.1",
+  "description": "Provides a full backend API and mongoose setup, based on your swagger specs",
+  "keywords": [
+    "koa",
+    "swagger",
+    "middleware",
+    "router",
+    "server"
+  ],
+  "main": "lib/",
+  "scripts": {
+    "pretest": "if [ ! -d \"./swagger-editor\" ]; then wget https://github.com/swagger-api/swagger-editor/releases/download/v2.9.9/swagger-editor.zip; unzip swagger-editor.zip -d swagger-editor; rm swagger-editor.zip; fi ",
+    "test": "gulp test && nyc ava",
+    "report": "nyc report --reporter=html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cr4x/koa-swagger-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cr4x/koa-swagger-server/issues"
+  },
+  "homepage": "https://github.com/Cr4x/koa-swagger-server",
+  "author": "Cr4x (https://github.com/Cr4x)",
+  "contributors": [
+    "Cr4x (https://github.com/Cr4x)"
+  ],
+  "license": "MIT",
+  "ava": {
+    "files": [
+      "**/*.spec.js"
+    ],
+    "failFast": true,
+    "verbose": true
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.13.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "koa-swagger-editor": "^1.0.0",
+    "nyc": "^6.1.1"
+  }
+}
